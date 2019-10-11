@@ -1,1 +1,1 @@
-![](Assignment1/Screenshot.png)
+![Screenshot of lab results](Assignment1/Screenshot.png)
