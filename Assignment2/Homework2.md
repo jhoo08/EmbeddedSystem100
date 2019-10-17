@@ -1,3 +1,5 @@
+Homework 2 Questions:
+
 1) Inject 0x1FFFFFFF for the “counter” value in the variable window, then step thru the program only once to increment “counter”.
 
 a) The adding the variable 0x1FFFFFFF, the value “counter” is now equal to 536870911
