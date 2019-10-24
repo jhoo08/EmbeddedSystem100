@@ -1,3 +1,7 @@
+void Charj();
+
+
+
 int main()
 {
   *((unsigned int*)0x40023830) = 0x01;
@@ -8,6 +12,7 @@ int main()
   
   while (1)
   {
+   Charj();
     *((unsigned int*)0x40020014) = 0x20; //LEN ON
     counter = 0;
     while(counter < 2000000) //turn on
@@ -58,11 +63,11 @@ int main()
     }
     *((unsigned int*)0x40020014) = 0x00; //LED OFF
     counter = 0;
-    while (counter < 2000000) //turn off
+    while (counter < 5000000) //turn off
     {
       counter++;
     }
-   // letter J (third dash)
+   // letter J (third dash)(LED off delay changed to 5 seconds because of unit 3(see morse code reference)(need to change the end of LED Off for each letter and then add a 9 second LED off at the end of the Name)
     
      *((unsigned int*)0x40020014) = 0x20; //LEN ON
     counter = 0;
@@ -266,4 +271,61 @@ int main()
     //look up board timing spec then translate to morse code timing 
   }
   return 0;
+}
+
+void Charj(){
+ *((unsigned int*)0x40020014) = 0x20; //LEN ON
+    counter = 0;
+    while(counter < 2000000) //turn on
+    {
+      counter++;
+    }
+    *((unsigned int*)0x40020014) = 0x00; //LED OFF
+    counter = 0;
+    while (counter < 2000000) //turn off
+    {
+      counter++;
+    }
+    //the start of the letter J  (dot)
+   
+    *((unsigned int*)0x40020014) = 0x20; //LEN ON
+    counter = 0;
+    while(counter < 5000000) //turn on
+    {
+      counter++;
+    }
+    *((unsigned int*)0x40020014) = 0x00; //LED OFF
+    counter = 0;
+    while (counter < 2000000) //turn off
+    {
+      counter++;
+    }
+   // letter J (first dash)
+    
+     *((unsigned int*)0x40020014) = 0x20; //LEN ON
+    counter = 0;
+    while(counter < 5000000) //turn on
+    {
+      counter++;
+    }
+    *((unsigned int*)0x40020014) = 0x00; //LED OFF
+    counter = 0;
+    while (counter < 2000000) //turn off
+    {
+      counter++;
+    }
+   // letter J (second dash)
+    
+     *((unsigned int*)0x40020014) = 0x20; //LEN ON
+    counter = 0;
+    while(counter < 5000000) //turn on
+    {
+      counter++;
+    }
+    *((unsigned int*)0x40020014) = 0x00; //LED OFF
+    counter = 0;
+    while (counter < 5000000) //turn off
+    {
+      counter++;
+    }
 }
