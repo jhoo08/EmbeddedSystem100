@@ -1,7 +1,8 @@
 int main()
 {
-  *((unsigned int*)0x40023830) = 0x01;
-  *((unsigned int*)0x40020000) = 0xA8000400;
+  
+  *((unsigned int*)0x40023830) = 0x01; //Enable clock to GPIOA
+  *((unsigned int*)0x40020000) = 0xA8000400; // Set GPIA to output
   int counter = 0;
   while (1)
   {
@@ -18,6 +19,7 @@ int main()
       counter++;
     }
     //the start of the letter J  (dot)
+    
      *((unsigned int*)0x40020014) = 0x20; //LEN ON
     counter = 0;
     while(counter < 6000000) //turn on
@@ -32,7 +34,7 @@ int main()
     }
    // letter J (first dash)  
     
-      *((unsigned int*)0x40020014) = 0x20; //LEN ON
+    *((unsigned int*)0x40020014) = 0x20; //LEN ON
     counter = 0;
     while(counter < 6000000) //turn on
     {
@@ -55,7 +57,7 @@ int main()
     }
     //break between "J" and "A"
     
-     *((unsigned int*)0x40020014) = 0x20; //LEN ON
+    *((unsigned int*)0x40020014) = 0x20; //LEN ON
     counter = 0;
     while(counter < 2000000) //turn on
     {
@@ -67,7 +69,7 @@ int main()
     {
       counter++;
     }
-   // letter A (first  dot) 
+   // letter A (first dot) 
     
     *((unsigned int*)0x40020014) = 0x20; //LEN ON
     counter = 0;
@@ -91,7 +93,7 @@ int main()
     }
     //Break between "A" and "M"
     
-     *((unsigned int*)0x40020014) = 0x20; //LEN ON
+    *((unsigned int*)0x40020014) = 0x20; //LEN ON
     counter = 0;
     while(counter < 6000000) //turn on
     {
@@ -105,7 +107,7 @@ int main()
     }
    // letter M (first dash)
     
-     *((unsigned int*)0x40020014) = 0x20; //LEN ON
+    *((unsigned int*)0x40020014) = 0x20; //LEN ON
     counter = 0;
     while(counter < 6000000) //turn on
     {
@@ -127,7 +129,7 @@ int main()
     }
     //break between "M" and "I"
 
-     *((unsigned int*)0x40020014) = 0x20; //LEN ON
+    *((unsigned int*)0x40020014) = 0x20; //LEN ON
     counter = 0;
     while(counter < 2000000) //turn on
     {
@@ -141,7 +143,7 @@ int main()
     }
    // letter I (first dot)
     
-     *((unsigned int*)0x40020014) = 0x20; //LEN ON
+    *((unsigned int*)0x40020014) = 0x20; //LEN ON
     counter = 0;
     while(counter < 2000000) //turn on
     {
@@ -163,7 +165,7 @@ int main()
     }
     //Break between "I" and "S"
     
-     *((unsigned int*)0x40020014) = 0x20; //LEN ON
+    *((unsigned int*)0x40020014) = 0x20; //LEN ON
     counter = 0;
     while(counter < 2000000) //turn on
     {
@@ -177,7 +179,7 @@ int main()
     }
    // letter S (First dot)
     
-     *((unsigned int*)0x40020014) = 0x20; //LEN ON
+    *((unsigned int*)0x40020014) = 0x20; //LEN ON
     counter = 0;
     while(counter < 2000000) //turn on
     {
@@ -191,7 +193,7 @@ int main()
     }
    // letter S (Second dot)
     
-     *((unsigned int*)0x40020014) = 0x20; //LEN ON
+    *((unsigned int*)0x40020014) = 0x20; //LEN ON
     counter = 0;
     while(counter < 2000000) //turn on
     {
@@ -213,7 +215,7 @@ int main()
     }
     //break between "S" and "O"
     
-     *((unsigned int*)0x40020014) = 0x20; //LEN ON
+    *((unsigned int*)0x40020014) = 0x20; //LEN ON
     counter = 0;
     while(counter < 6000000) //turn on
     {
@@ -227,7 +229,7 @@ int main()
     }
    // letter O (First  dash)
 
- *((unsigned int*)0x40020014) = 0x20; //LEN ON
+    *((unsigned int*)0x40020014) = 0x20; //LEN ON
     counter = 0;
     while(counter < 6000000) //turn on
     {
@@ -298,8 +300,6 @@ int main()
       counter++;
     }
     //add ending to encoding of my  name    
-    
-   
   }
   return 0;
 }
