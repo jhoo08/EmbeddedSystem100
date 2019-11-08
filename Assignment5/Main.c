@@ -1,43 +1,43 @@
 #define STACKSIZE 4
 
-int StackStorage[Stack_SIZE];
+int StackStorage[StackSIZE];
+int stack[4] = {0 , 1, 2, 3};
+int top = -1;
 
-int* putPointer;
-int* getPointer;
-
-void stack_init(void)
+int emptystack()
 {
-	putPointer = 0;
-	getPointer = 0;
-	for(int i = 0; i <STACKSIZE; i++)
-	{
-		StackStorage[i] = '\0';
-	}
+	if(top == -1)
+		return 1;
+	else
+		return 0;
 }
 
-int stack_put(int data)
-{
-	if( getPointer == &StackStorage[0] && putPointer == &StackStorage[Stack_SIZE-1])
-	{
-		return -1'
-	}
-	
-	if(getPointer == 0)
-	{
-		getPointer = &StackStorage[0];
-	}
-	
-	if(putPointer == 0 || putPointer == &StackStorage[Stack_SIZE -1])
-	{
-		putPointer = &StackStorage[0];
-	}
+int fullstack() {
+	if(top == STACKSIZE)
+		return 1;
 	else
-	{
-		putPointer++;
-	}
+		return 0;
+}
+
+int check() {
+	return stack[top];
+}
+
+int pop() {
+	int popdata;
 	
-	*putPointer = data;
-	return =0;
+	if(!emptystack())
+	{
+		data = stack[top];
+		top = top - 1;
+		return data;
+	} 
+	
+int push(int data){
+	if(!fullstack()) {
+		top = top + 1;
+		stack[top] = data;
+	}
 }
 
 	
