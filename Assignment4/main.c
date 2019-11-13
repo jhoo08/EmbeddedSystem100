@@ -1,4 +1,4 @@
-//Assignment04, Problem#3
+//Problem#3
 //This code will test a stack data structure.
 //There are 5 test cases in this code. Please uncomment the test case you wish to implement
 
